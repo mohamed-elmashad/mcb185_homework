@@ -1,0 +1,15 @@
+Fri Jan 26 16:36:20 PST 2024
+user: mohamedelmashad
+home: /Users/mohamedelmashad
+shell: /opt/homebrew/bin/fish
+pwd: /Users/mohamedelmashad/docs/School/MCB185/Code/mcb185_homework
+path: /Users/mohamedelmashad/miniconda3/bin:/Users/mohamedelmashad/miniconda3/condabin:/opt/homebrew/bin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Library/Apple/usr/bin:/usr/local/share/dotnet:~/.dotnet/tools:/Library/Frameworks/Mono.framework/Versions/Current/Commands
+Darwin campus-106-139.ucdavis.edu 23.1.0 Darwin Kernel Version 23.1.0: Mon Oct  9 21:28:31 PDT 2023; root:xnu-10002.41.9~6/RELEASE_ARM64_T8112 arm64
+Python 3.11.4
+/Users/mohamedelmashad/docs/School/MCB185/Code
+/Users/mohamedelmashad/docs/School/MCB185/Code/mcb185_homework
+/Users/mohamedelmashad/docs/School/MCB185/Code/mcb185_homework/.git
+/Users/mohamedelmashad/docs/School/MCB185/Code/MCB185
+/Users/mohamedelmashad/docs/School/MCB185/Code/MCB185/quiz
+/Users/mohamedelmashad/docs/School/MCB185/Code/MCB185/.git
+/Users/mohamedelmashad/docs/School/MCB185/Code/MCB185/data
