@@ -4,7 +4,12 @@ alphabet = 'ACGT'
 match = '+1'
 mismatch = '-1'
 
-print('   A  C  G  T')
+# Print header
+print('   ', end='')
+for i in alphabet:
+	print(i, end='  ')
+print('')
+
 for i in alphabet:
 	print(i, end=' ')
 	for j in alphabet:
