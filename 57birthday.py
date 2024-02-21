@@ -8,7 +8,6 @@ days = int(sys.argv[2])
 people = int(sys.argv[3])
 
 dup = 0
-propability = 0
 bdays = []
 
 # initialize and reset the list of bdays
