@@ -131,11 +131,11 @@ def hydropathy(amino_acid):
 		return -1.30
 
 def average_hydropathy(sequence):
-	hydropathy_values = []
+	total, num = 0, 0
 	for aa in sequence:
-		hydropathy_values.append(hydropathy(aa))
-		
-	return sum(hydropathy_values) / len(hydropathy_values)
+		total += hydropathy(aa)
+		num += 1
+	return total / num
 	
 def gc_comp(seq):
 	return (seq.count('C') + seq.count('G')) / len(seq)
@@ -146,7 +146,7 @@ def gc_comp_counts(count_c, count_g, seq_length):
 def gc_skew(seq):
 	c = seq.count('C')
 	g = seq.count('G')
-	return gc_comp_counts(c, g)
+	return gc_skew_counts(c, g)
 
 def gc_skew_counts(c, g):
 	if c + g == 0:

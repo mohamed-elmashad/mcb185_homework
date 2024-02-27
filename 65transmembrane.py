@@ -12,7 +12,8 @@ def no_proline(sequence):
 def check_region(sequence, window, threshold):
 	for i in range(len(sequence) - window + 1):
 		subseq = sequence[i:i+window]
-		if genomeutils.average_hydropathy(subseq) >= threshold and no_proline(subseq):
+		average = genomeutils.average_hydropathy(subseq)
+		if average >= threshold and no_proline(subseq):
 			return True
 	return False
 
