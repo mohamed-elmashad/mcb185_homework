@@ -23,7 +23,7 @@ Participation
 | 4 |
 | 5 | 0 |  0  |  0 |  2 |  2  |  1 |  0 |  2 |  9  | 1, 2
 | 6 | 0 | 0   |  0 |  2 |   2 |  1 |  0 | 5  |  10  | 1, 2, 3, 4
-| 7 |   |   |   |   |    |   |   |   |    |
+| 7 | 2  |   |   |   |    |   |   |   |    |
 | 8 |   |   |   |   |    |   |   |   |    |
 | 9 |   |   |   |   |    |   |   |   |    |
 
@@ -32,5 +32,5 @@ Notes:
 1. Answered a question in discord
 2. Asked a question in discord
 3. Hosted 3 coderies and helped 6 peers (1/2 per peer)
-4. Assisted Dr. Korf in debugging problem 65
+4. Talked to Dr. Korf about debugging problem 65
 5. Will go to class this week, see you tomorrow Dr. Korf 🫶
