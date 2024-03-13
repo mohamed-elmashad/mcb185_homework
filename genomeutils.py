@@ -1,3 +1,4 @@
+import gzip
 import math
 
 def transcribe(dna):
@@ -17,20 +18,6 @@ def reverse_complement(dna):
 		else:
 			rc.append('N')
 	return ''.join(rc)
-
-# def translate(dna):
-# 	aas = []
-# 	codons = ('ATG', 'TAA')
-# 	aminos = 'M*'
-# 	for i in range(0, len(dna), 3):
-# 		codon = dna[i:i+3]
-# 		if codon in codons:
-# 			idx = codons.index(codon)
-# 			aa = aminos[idx]
-# 			aas.append(aa)
-# 		else:
-# 			aas.append('X')
-# 	return ''.join(aas)
 
 def translate(dna):
 	protein_sequence = ''
@@ -179,3 +166,71 @@ def entropy_count(A, C, G, T):
 
 	return -(a + c + g + t)
 
+def read_genome_sequence(file_path):
+	genome = []
+	with gzip.open(file_path, 'rt') as fp:
+		for line in fp:
+			if line.startswith('ORIGIN'):
+				break
+		for line in fp:
+			words = line.upper().split()
+			for word in words[1:]:
+				genome.append(word)
+	return ''.join(genome)
+
+def print_pwm(name, identifier, description, pwm):
+	print('AC', name)
+	print('XX')
+	print('ID', identifier)
+	print('XX')
+	print('DE', description)
+	print('PO\tA\tC\tG\tT')
+	for i, count in enumerate(pwm):
+		a_count = count['A']
+		c_count = count['C']
+		g_count = count['G']
+		t_count = count['T']
+		print(f'{i+1:<8}{a_count:<8}{c_count:<8}{g_count:<8}{t_count:<8}')
+	print('XX')
+	print('//')
+
+def read_gff(gff_file, wanted_feature):
+	features = []
+	with gzip.open(gff_file, 'rt') as fp:
+		for line in fp:
+			fields = line.split('\t')
+
+			ID = fields[0]
+			feature_source = fields[1]
+			feature_type = fields[2]
+			start = int(fields[3]) - 1
+			end = int(fields[4]) - 1
+			score = fields[5]
+			strand = fields[6]
+			info = fields[7]
+
+			if feature_source == wanted_feature and score != '.' or \
+				(wanted_feature == 'all'):
+				feature_data = (ID, feature_source, feature_type, start, end, score, 
+						strand, info)
+				features.append(feature_data)
+	return features
+
+def read_vcf(vcf_file):
+	variants = []
+	with gzip.open(vcf_file, 'rt') as fp:
+		for line in fp:				
+			fields = line.split('\t')
+			chromosome = fields[0]
+			position = int(fields[1])
+			ID = fields[2]
+			ref = fields[3]
+			alt = fields[4]
+
+			variant_data = (chromosome, position, ID, ref, alt)
+			variants.append(variant_data)
+	return variants
+
+def pretty_print(seq):
+	for i in range(0, len(seq), 60):
+		print(seq[i:i+60])

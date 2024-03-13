@@ -18,19 +18,20 @@ def find_putative_genes(dna_sequences_file, protein_length):
 	for defline, sequence in mcb185.read_fasta(dna_sequences_file):
 		translated_frame = six_frame_translation(sequence)
 
-	segments = translated_frame.split('*')
-	for s in segments:
-		start_index = s.find('M')
-		if start_index != -1:
-			protein = s[start_index:]
-			if len(protein) >= protein_length:
-				protein_deflines.append(defline)
-				protein_sequences.append(protein)
+		segments = translated_frame.split('*')
+		for s in segments:
+			start_index = s.find('M')
+			if start_index != -1:
+				protein = s[start_index:]
+				if len(protein) >= protein_length:
+					protein_deflines.append(defline)
+					protein_sequences.append(protein)
 
-	for i in range(len(protein_deflines)):
-		print(f'>{protein_deflines[i]}')
-		print(protein_sequences[i])
-	print(f'Found {len(protein_deflines)} putative genes')
+		for i in range(len(protein_deflines)):
+			print(f'>{protein_deflines[i]}')
+			print(protein_sequences[i])
+		print(f'Found {len(protein_deflines)} putative genes')
+
 path = sys.argv[1]
 protein_length = int(sys.argv[2])
 

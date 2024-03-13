@@ -18,6 +18,5 @@ for defline, seq in mcb185.read_fasta(path):
 				seq_list[j] = 'N'
 	masked_seq = ''.join(seq_list)
 		
-	for i in range(0, len(masked_seq), 60):
-		print(masked_seq[i:i+60])
+	genomeutils.pretty_print(masked_seq)
 
