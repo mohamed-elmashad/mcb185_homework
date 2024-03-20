@@ -15,6 +15,9 @@ for name, seq in mcb185.read_fasta(args.file):
 	protein_seq = genomeutils.translate(seq)
 	# find first methionine
 	start_index = protein_seq.find('M')
+	# if not found, check for leucine
+	if start_index == -1:
+		start_index = protein_seq.find('L')
 	if start_index != -1:
 		protein_seq_trimmed = protein_seq[start_index:]
 		# trim off stop codon
