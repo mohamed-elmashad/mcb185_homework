@@ -16,17 +16,14 @@ while not found_missing:
 					kcount[kmer] = 0
 				kcount[kmer] += 1
 	
-	all_kmers = []
+	missing_kmers = []
 	bases = ['A', 'C', 'G', 'T']
 
 	for kmer in itertools.product(bases, repeat=k):
-		all_kmers.append(''.join(kmer))
-
-	missing_kmers = []
-	for kmer in all_kmers:
+		kmer = ''.join(kmer)
 		if kmer not in kcount:
 			missing_kmers.append(kmer)
-		
+
 	if missing_kmers:
 		found_missing = True
 		print("Missing k-mers at k =", k)
